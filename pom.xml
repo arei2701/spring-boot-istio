@@ -74,7 +74,7 @@
 		    <artifactId>asm</artifactId>
 		    <version>6.2</version> <!-- Use newer version of ASM -->
 		</dependency>
-
+	</dependencies>
 	<build>
 		<plugins>
 			<plugin>

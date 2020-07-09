@@ -32,6 +32,8 @@
 		<istio-client.version>1.5.4-Alpha1</istio-client.version>
 		<kubernetes-client.version>4.10.1</kubernetes-client.version>
 		<spring.version>5.2.6.RELEASE</spring.version>
+		<maven.compiler.source>${java.version}</maven.compiler.source>
+    		<maven.compiler.target>${java.version}</maven.compiler.target>
 	</properties>
 
 	<scm>
@@ -67,7 +69,11 @@
 			<artifactId>spring-context-support</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
-	</dependencies>
+		<dependency>
+		    <groupId>org.ow2.asm</groupId>
+		    <artifactId>asm</artifactId>
+		    <version>6.2</version> <!-- Use newer version of ASM -->
+		</dependency>
 
 	<build>
 		<plugins>
@@ -75,10 +81,6 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.8.0</version>
-				<configuration>
-					<source>14</source>
-          				<target>14</target>
-				    </configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
